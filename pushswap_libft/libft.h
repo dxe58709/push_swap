@@ -35,5 +35,6 @@ void	ft_lstdelone(t_list *list, void (*del)(void*));
 void	ft_lstclear(t_list **list, void (*del)(void*));
 void	ft_lstiter(t_list *list, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void*));
+void	lst_free(t_node **stack_a, t_node **stack_b);
 
 #endif
