@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: N <nsakanou@student.42tokyo.jp>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 15:18:27 by nsakanou          #+#    #+#              #
-#    Updated: 2023/08/23 18:44:29 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/09/04 20:57:41 by N                ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ SRCS=	ft_lstnew.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
-	 
+    	ft_putstr_ft.c
+ 
 OBJS = $(SRCS:.c=.o)
 
 all : $(NAME)
@@ -37,7 +38,10 @@ $(NAME) : $(OBJS)
 
 clean:
 	$(RM) $(OBJS)
+
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
