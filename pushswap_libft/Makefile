@@ -6,7 +6,7 @@
 #    By: N <nsakanou@student.42tokyo.jp>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 15:18:27 by nsakanou          #+#    #+#              #
-#    Updated: 2023/09/04 20:57:41 by N                ###   ########.fr        #
+#    Updated: 2023/09/05 15:26:03 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS=	ft_lstnew.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
-    	ft_putstr_ft.c
+		ft_putstr_fd.c \
  
 OBJS = $(SRCS:.c=.o)
 

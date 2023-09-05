@@ -1,10 +1,16 @@
-#include <>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/05 16:07:25 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/09/05 16:09:40 by nsakanou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-typedef struct s_node
-{
-    int content;
-    struct s_node *next;
-} t_node;
+#include "push_swap.h" 
 
 void reverse_rotate(t_node **stack)
 {

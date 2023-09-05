@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 15:04:07 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/05 18:15:07 by nsakanou         ###   ########.fr       */
+/*   Created: 2023/09/05 15:27:33 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/09/05 15:31:57 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
 	i = 0;
-	if (s == NULL)
-		return ;
-	write(fd, s, ft_strlen(s));
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

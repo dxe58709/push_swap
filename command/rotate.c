@@ -1,10 +1,16 @@
-#include <>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/05 16:03:33 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/09/05 18:20:48 by nsakanou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-typedef struct s_node
-{
-    int content;
-    struct s_node *next;
-} t_node;
+#include "push_swap.h" 
 
 void rotate(t_node **stack)
 {
@@ -15,7 +21,7 @@ void rotate(t_node **stack)
     }
 
     t_node *head = *stack;      // 現在のヘッド
-    t_node *sentinel = *stack;  // 新しいヘッド
+//    t_node *sentinel = *stack;  // 新しいヘッド
     t_node *tail = *stack;
 
     while (tail->next != NULL)

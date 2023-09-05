@@ -1,10 +1,17 @@
-#include<>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/05 15:54:31 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/09/05 18:21:33 by nsakanou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-typedef struct s_node
-{
-	int content; //nodeが保持するデータを格納
-	struct s_node *next;//次のnodeが指すポインタを格納
-} t_node;
+#include "push_swap.h"
+#include "libft.h"
 
 void push(t_node **src, t_node **dst)//src から dst に要素を移動する関数
 {
@@ -30,34 +37,6 @@ void push(t_node **src, t_node **dst)//src から dst に要素を移動する�
 	new_dst_head->next = *dst;
 	*dst = new_dst_head;
 //src リストから最後の要素を切り離し、その要素を dst リストの先頭に追加しています。
-}
-
-int main()
-{
-	// テスト用のコード
-	t_node *stack_a = NULL;
-	t_node *stack_b = NULL;
-
-	// スタックAにノードを追加
-	t_node node1 = {1, NULL};
-	t_node node2 = {2, NULL};
-	t_node node3 = {3, NULL};
-	stack_a = &node1;
-	node1.next = &node2;
-	node2.next = &node3;
-
-	// スタックBに要素をプッシュ
-	push(&stack_a, &stack_b);
-
-	// スタックBの内容を表示
-	t_node *current = stack_b;
-	while (current != NULL)
-	{
-		printf("%d ", current->content);
-		current = current->next;
-	}
-
-	return 0;
 }
 
 void	pa(t_node **stack_a, t_node **stack_b)
