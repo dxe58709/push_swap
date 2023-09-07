@@ -6,11 +6,11 @@
 #    By: N <nsakanou@student.42tokyo.jp>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 15:18:27 by nsakanou          #+#    #+#              #
-#    Updated: 2023/09/05 15:26:03 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/09/07 18:57:55 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = pushswap_libft.a
+NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f

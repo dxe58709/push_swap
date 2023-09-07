@@ -6,13 +6,13 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:07:25 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/05 16:09:40 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/07 18:25:40 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h" 
 
-void reverse_rotate(t_node **stack)
+void reverse_rotate(t_list **stack)
 {
     if (*stack == NULL || (*stack)->next == NULL)
     {
@@ -20,9 +20,9 @@ void reverse_rotate(t_node **stack)
         return;
     }
 
-    t_node *head = *stack;      // 現在のヘッド
-    t_node *tail = *stack;      // 新しいヘッド
-    t_node *sentinel = *stack;
+    t_list *head = *stack;      // 現在のヘッド
+    t_list *tail = *stack;      // 新しいヘッド
+    t_list *sentinel = *stack;
 
     while (sentinel->next != NULL)
     {
@@ -36,13 +36,13 @@ void reverse_rotate(t_node **stack)
     *stack = sentinel;
 }
 
-void	rra(t_node **stack_a)
+void	rra(t_list **stack_a)
 {
 	reverse_rotate(stack_a);
 	ft_putstr_fd("rra\n", STDOUT_FILENO);
 }
 
-void	rrb(t_node **stack_b)
+void	rrb(t_list **stack_b)
 {
 	reverse_rotate(stack_b);
 	ft_putstr_fd("rrb\n", STDOUT_FILENO);

@@ -6,18 +6,17 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:54:31 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/05 18:21:33 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/07 18:24:02 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
-void push(t_node **src, t_node **dst)//src から dst に要素を移動する関数
+void push(t_list **src, t_list **dst)//src から dst に要素を移動する関数
 {
-	t_node *new_dst_head;
-	t_node *src_sentinel;
-	t_node *dst_sentinel;
+	t_list *new_dst_head;
+	t_list *src_sentinel;
+	t_list *dst_sentinel;
 
 	if (*src == NULL || (*src)->next == NULL)
 		return;
@@ -39,13 +38,13 @@ void push(t_node **src, t_node **dst)//src から dst に要素を移動する�
 //src リストから最後の要素を切り離し、その要素を dst リストの先頭に追加しています。
 }
 
-void	pa(t_node **stack_a, t_node **stack_b)
+void	pa(t_list **stack_a, t_list **stack_b)
 {
 	push(stack_b, stack_a);
 	ft_putstr_fd("pa\n", STDOUT_FILENO);
 }
 
-void	pb(t_node **stack_a, t_node **stack_b)
+void	pb(t_list **stack_a, t_list **stack_b)
 {
 	push(stack_a, stack_b);
 	ft_putstr_fd("pb\n", STDOUT_FILENO);

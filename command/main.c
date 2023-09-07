@@ -5,69 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 16:11:01 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/05 18:07:04 by nsakanou         ###   ########.fr       */
+/*   Created: 2023/09/07 17:39:25 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/09/07 19:09:07 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "push_swap.h"
+#include "libft.h"
+#include <stdio.h>
 
-/*
-//swap
-int main()
+void	print_stack(void *nbr)
 {
-    // テスト用のコード
-    t_node *stack = NULL;
-
-    // スタックにノードを追加
-    t_node node1 = {1, NULL};
-    t_node node2 = {2, NULL};
-    t_node node3 = {3, NULL};
-    stack = &node1;
-    node1.next = &node2;
-    node2.next = &node3;
-
-    // ノードの交換
-    swap(&stack);
-
-    // 結果の表示
-    t_node *current = stack;
-    while (current != NULL)
-    {
-        printf("%d ", current->content);
-        current = current->next;
-    }
-
-    return 0;
+	printf("[%d]\n", *(int *)nbr);
 }
-*/
-//push
-int main()
+	
+
+int	main()
 {
-    // テスト用のコード
-    t_node *stack_a = NULL;
-    t_node *stack_b = NULL;
+	t_list	*stack_a = NULL;
+	t_list	*stack_b = NULL;
+	t_list	*stack_new;
+	
+	int	*i = malloc(sizeof(int *));
+	*i = 1;
+	stack_new = ft_lstnew(i);
+	ft_lstadd_back(&stack_a, stack_new);
+	
+	int	*j = malloc(sizeof(int *));
+	*j = 2;
+	stack_new = ft_lstnew(j);
+	ft_lstadd_back(&stack_a, stack_new);
 
-    // スタックAにノードを追加
-    t_node node1 = {1, NULL};
-    t_node node2 = {2, NULL};
-    t_node node3 = {3, NULL};
-    stack_a = &node1;
-    node1.next = &node2;
-    node2.next = &node3;
 
-    // スタックBに要素をプッシュ
-    push(&stack_a, &stack_b);
-
-    // スタックBの内容を表示
-    t_node *current = stack_b;
-    while (current != NULL)
-    {
-        printf("%d ", current->content);
-        current = current->next;
-    }
-
-    return 0;
+	pb(&stack_a, &stack_b);
+	pa(&stack_a, &stack_b);
+	rra(&stack_a);
+	ft_lstiter(stack_a, print_stack);
+	ft_lstclear(&stack_a, free);
 }
-
