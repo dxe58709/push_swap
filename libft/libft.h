@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:54:21 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/07 18:57:40 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/08 16:12:37 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,24 @@
 # include <string.h>
 # include <ctype.h>
 
-typedef struct s_list
+typedef struct s_node
 {
 	void			*content;
-	struct s_list	*next;
-}t_list;
+	struct s_node	*next;
+	struct s_node	*stack_a;
+	struct s_node	*stack_b;
+}t_node;
 
-t_list	*ft_lstnew(void *content);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-int		ft_lstsize(t_list *lst);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstdelone(t_list *list, void (*del)(void*));
-void	ft_lstclear(t_list **list, void (*del)(void*));
-void	ft_lstiter(t_list *list, void (*f)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void*));
-void	lst_free(t_list **stack_a, t_list **stack_b);
+t_node	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_node **lst, t_node *new);
+int		ft_lstsize(t_node *lst);
+t_node	*ft_lstlast(t_node *lst);
+void	ft_lstadd_back(t_node **lst, t_node *new);
+void	ft_lstdelone(t_node *list, void (*del)(void*));
+void	ft_lstclear(t_node **list, void (*del)(void*));
+void	ft_lstiter(t_node *list, void (*f)(void *));
+t_node	*ft_lstmap(t_node *lst, void *(*f)(void *), void (*del)(void*));
+void	lst_free(t_node **stack_a, t_node **stack_b);
 
 void	ft_putstr_fd(char *s, int fd);
 size_t	ft_strlen(const char *str);

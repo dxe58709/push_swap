@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+         #
+#    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 18:10:44 by nsakanou          #+#    #+#              #
-#    Updated: 2023/09/07 18:59:48 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/09/08 16:04:42 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,15 +14,15 @@ NAME = push_swap
 INCLUDES_DIR = ./Includes
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I $(INCLUDES_DIR) -I ./command -I ./libft
+CFLAGS = -Wall -Wextra -Werror -I $(INCLUDES_DIR) -I ./libft -I ./srcs/push_swap
 RM = rm -f
 
-SRCS = command/list.c \
-	command/push.c \
-	command/reverse_rotate.c \
-	command/rotate.c \
-	command/swap.c \
-	command/main.c \
+SRCS = srcs/push_swap/list.c \
+	srcs/push_swap/push.c \
+	srcs/push_swap/reverse_rotate.c \
+	srcs/push_swap/rotate.c \
+	srcs/push_swap/swap.c \
+	srcs/push_swap/main.c \
 	libft/ft_lstadd_back.c \
 	libft/ft_lstadd_front.c \
 	libft/ft_lstclear.c \

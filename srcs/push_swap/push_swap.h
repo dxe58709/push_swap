@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
+/*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 18:01:11 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/07 19:01:14 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/08 16:26:56 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,22 @@
 # include <string.h>
 # include <ctype.h>
 
-t_list	*create_sentinel_node(void);//リストに番兵ノードを追加するため
+t_node	*create_sentinel_node(void);//リストに番兵ノードを追加するため
 
-void	swap(t_list **stack);
-void	sa(t_list **stack_a);
-void	sb(t_list **stack_b);
+void	swap(t_node **stack);
+void	sa(t_node **stack_a);
+void	sb(t_node **stack_b);
 
-void	push(t_list **src, t_list **dst);
-void	pa(t_list **stack_a, t_list **stack_b);
-void	pb(t_list **stack_a, t_list **stack_b);
+void	push(t_node **src, t_node **dst);
+void	pa(t_node **stack_a, t_node **stack_b);
+void	pb(t_node **stack_a, t_node **stack_b);
 
-void	rotate(t_list **stack);
-void	ra(t_list **stack_a);
-void	rb(t_list **stack_b);
+void	rotate(t_node **stack);
+void	ra(t_node **stack_a);
+void	rb(t_node **stack_b);
 
-void	reverse_rotate(t_list **stack);
-void	rra(t_list **stack_a);
-void	rrb(t_list **stack_b);
+void	reverse_rotate(t_node **stack);
+void	rra(t_node **stack_a);
+void	rrb(t_node **stack_b);
 
 #endif

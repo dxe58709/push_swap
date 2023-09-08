@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
+/*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:39:25 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/07 19:09:07 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/08 15:40:21 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 #include <stdio.h>
 
 void	print_stack(void *nbr)
@@ -22,9 +21,9 @@ void	print_stack(void *nbr)
 
 int	main()
 {
-	t_list	*stack_a = NULL;
-	t_list	*stack_b = NULL;
-	t_list	*stack_new;
+	t_node	*stack_a = NULL;
+	//t_list	*stack_b = NULL;
+	t_node	*stack_new;
 	
 	int	*i = malloc(sizeof(int *));
 	*i = 1;
@@ -36,9 +35,6 @@ int	main()
 	stack_new = ft_lstnew(j);
 	ft_lstadd_back(&stack_a, stack_new);
 
-
-	pb(&stack_a, &stack_b);
-	pa(&stack_a, &stack_b);
 	rra(&stack_a);
 	ft_lstiter(stack_a, print_stack);
 	ft_lstclear(&stack_a, free);
