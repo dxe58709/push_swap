@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:07:25 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/08 15:28:57 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:38:31 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 void	reverse_rotate(t_node **stack)
 {
+	t_node	*head;
+	t_node	*tail;
+	t_node	*sentinel;
+
 	if (*stack == NULL || (*stack)->next == NULL)// リストが空または1つのノードしかない場合、何もしない
 		return ;
 
-	t_node	*head = *stack;// 現在のヘッド
-	t_node	*tail = *stack;// 新しいヘッド
-	t_node	*sentinel = *stack;
+	head = *stack;// 現在のヘッド
+	tail = *stack;// 新しいヘッド
+	sentinel = *stack;
 
 	while (sentinel->next != NULL)
 	{

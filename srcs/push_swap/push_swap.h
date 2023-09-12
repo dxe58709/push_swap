@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 18:01:11 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/08 16:26:56 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/12 19:29:07 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <string.h>
 # include <ctype.h>
 
-t_node	*create_sentinel_node(void);//リストに番兵ノードを追加するため
+t_node	*create_sentinel_node(void);//番兵ノードを作成する関数(list.c)
 
 void	swap(t_node **stack);
 void	sa(t_node **stack_a);
@@ -38,5 +38,10 @@ void	rb(t_node **stack_b);
 void	reverse_rotate(t_node **stack);
 void	rra(t_node **stack_a);
 void	rrb(t_node **stack_b);
+
+t_node	*create_node(int data);
+
+t_node	*partition(t_node *head, t_node **pivot);
+t_node	*quick_sort(t_node *head);
 
 #endif

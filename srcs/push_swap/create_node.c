@@ -3,76 +3,92 @@
 /*                                                        :::      ::::::::   */
 /*   create_node.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
+/*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:58:51 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/07 17:52:31 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:53:41 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h" 
 #include <stdio.h>
-#include <stdlib.h>
 
-// ノードの構造体
-struct Node {
-    int data;
-    struct Node *next;
-};
 
 // 循環リストの構造体
-struct CircularLinkedList {
-    struct Node *head;
+struct s_cyclist
+{
+	struct Node	*head;
 };
 
 // 新しいノードを作成する関数
-struct Node *createNode(int data) {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
-    newNode->data = data;
-    newNode->next = NULL;
-    return newNode;
+t_node	*create_node(int data)
+{
+	t_node	*new_node;
+
+	new_node = (t_node *)malloc(sizeof(t_node));
+	new_node->data = data;
+	new_node->next = NULL;
+	return (new_node);
 }
 
 // 循環リストにノードを追加する関数
-void appendNode(struct CircularLinkedList *list, int data) {
-    struct Node *newNode = createNode(data);
-    if (list->head == NULL) {
-        list->head = newNode;
-        newNode->next = newNode;  // リストを循環させる
-    } else {
-        struct Node *current = list->head;
-        while (current->next != list->head) {
-            current = current->next;
-        }
-        current->next = newNode;
-        newNode->next = list->head;
-    }
+void	append_node(struct s_cyclist *list, int data)
+{
+	t_node	*new_node;
+	t_node	*current;
+
+	new_node = create_node(data);
+	if (list->head == NULL)
+	{
+		list->head = new_node;
+		new_node->next = new_node;// リストを循環させる
+	}
+	else
+	{
+		current = list->head;
+		while (current->next != list->head)
+			current = current->next;
+		current->next = new_node;
+		new_node->next = list->head;
+	}
 }
 
 // 循環リストの内容を表示する関数
-void displayList(struct CircularLinkedList *list) {
-    if (list->head == NULL) {
-        printf("List is empty.\n");
-        return;
-    }
-    struct Node *current = list->head;
-    do {
-        printf("%d -> ", current->data);
-        current = current->next;
-    } while (current != list->head);
-    printf("\n");
+void	display_list(struct s_cyclist *list)
+{
+	t_node	*current;
+
+	// リストが空の場合、メッセージを表示して関数を終了
+	if (list->head == NULL)
+	{
+		printf("List is empty.\n");
+		return ;
+	}
+	current = list->head;// 現在のノードをリストの先頭に設定
+	while (current != NULL)// ループを使用してリスト内の要素を表示
+	{
+		printf("%d -> ", current->data);// 現在のノードのデータを表示
+		current = current->next;
+		if (current == list->head)// リストを一周した場合、ループを終了
+			break ;
+	}
+	printf("\n");
 }
 
-int main() {
-    struct CircularLinkedList list;
-    list.head = NULL;
+/*
+int main()
+{
+	struct cyclist	list;
 
-    appendNode(&list, 1);
-    appendNode(&list, 2);
-    appendNode(&list, 3);
+	list.head = NULL;
 
-    printf("Circular Linked List: ");
-    displayList(&list);
+	append_node(&list, 1);
+	append_node(&list, 2);
+	append_node(&list, 3);
 
-    return 0;
+	printf("Circular Linked List: ");
+	display_list(&list);
+
+	return 0;
 }
-
+*/

@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:57:04 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/08 15:35:05 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:43:03 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 void	swap(t_node **stack)
 {
+	t_node	*old_head;
+	t_node	*new_head;
+
 	if (*stack == NULL || (*stack)->next == NULL) // リストが空または1つのノードしかない場合、何もしない
 		return ;
 
-	t_node	*old_head = *stack;// 現在のヘッド
-	t_node	*new_head = old_head->next;// 新しいヘッド
+	old_head = *stack;// 現在のヘッド
+	new_head = old_head->next;// 新しいヘッド
 
     // リストのヘッドを交換
 	old_head->next = new_head->next;
