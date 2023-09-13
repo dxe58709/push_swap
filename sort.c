@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:19:08 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/12 19:46:19 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/13 17:48:56 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,26 @@ t_node	*partition(t_node *head, t_node **pivot)
 	t_node	*current;
 	t_node	*next;
 
-	pivot_node = head;
-	*pivot = head;
+	pivot_node = head;// ピボットノードをリストの先頭に設定
+	*pivot = head;// ピボットノードへのポインタを初期化
 	current = head->next;
 	while (current != head)
 	{
 		next = current->next;
 		if (current->data < pivot_node->data)
-		{
+		{// ピボットより小さいノードはリストの先頭に移動
 			current->next = *pivot;
 			*pivot = current;
 		}
-		else
+		else// ピボットより大きいノードは適切な位置に挿入
 		{
 			pivot_node->next = current;
 			pivot_node = current;
 		}
 		current = next;
 	}
-	pivot_node->next = *pivot;
-	return (pivot_node);
+	pivot_node->next = *pivot;// 分割が完了し、ピボットノードが中心になるように調整
+	return (pivot_node);// 新たなピボットノードを返す
 }
 
 // クイックソートを実行する関数
@@ -57,12 +57,12 @@ t_node	*quick_sort(t_node *head)
 		temp = pivot->next;
 		pivot->next = temp->next;
 		temp->next = NULL;
-		pivot_node->next = quick_sort(pivot->next);
+		pivot_node->next = quick_sort(pivot->next);// 右側の部分リストを再帰的にソート
 	}
-	head = quick_sort(head);
+	head = quick_sort(head);// 左側の部分リストを再帰的にソート
 	pivot = head;
 	while (pivot->next != NULL)
 		pivot = pivot->next;
-	pivot->next = head;
-	return (pivot_node);
+	pivot->next = head;// 左右のソート済みリストを連結
+	return (pivot_node);// ソート済み部分リストの新たなピボットノードを返す
 }
