@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:03:33 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/12 17:41:51 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/14 13:33:56 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	rotate(t_node **stack)
 	if (*stack == NULL || (*stack)->next == NULL)// リストが空または1つのノードしかない場合、何もしない
 		return ;
 
-	head == *stack;// 現在のヘッド
-	tail == *stack;
+	head = *stack;// 現在のヘッド
+	tail = *stack;
 
 	while (tail->next != NULL)
 		tail = tail->next;

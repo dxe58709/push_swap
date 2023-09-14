@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:39:25 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/08 15:40:21 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/14 13:56:01 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main()
 	stack_new = ft_lstnew(j);
 	ft_lstadd_back(&stack_a, stack_new);
 
-	rra(&stack_a);
+	sa(&stack_a);
 	ft_lstiter(stack_a, print_stack);
 	ft_lstclear(&stack_a, free);
 }

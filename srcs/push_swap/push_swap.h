@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 18:01:11 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/12 19:29:07 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:53:26 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 # include <stddef.h>
 # include <string.h>
 # include <ctype.h>
+
+
+int		ps_atoi(const char *str, int *flag);
 
 t_node	*create_sentinel_node(void);//番兵ノードを作成する関数(list.c)
 

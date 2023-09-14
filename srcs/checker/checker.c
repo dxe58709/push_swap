@@ -6,9 +6,13 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 14:50:37 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/08 14:50:57 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/14 13:23:13 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+#include <stdio.h>
+#include "push_swap.h"
 
 #define STACK_SIZE 100  // スタックの最大サイズ
 
@@ -89,4 +93,4 @@ int main() {
 
     return 0;
 }
-
+*/

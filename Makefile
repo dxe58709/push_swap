@@ -6,7 +6,7 @@
 #    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 18:10:44 by nsakanou          #+#    #+#              #
-#    Updated: 2023/09/08 16:04:42 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/09/14 14:59:28 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -I $(INCLUDES_DIR) -I ./libft -I ./srcs/push_swap
 RM = rm -f
 
-SRCS = srcs/push_swap/list.c \
-	srcs/push_swap/push.c \
-	srcs/push_swap/reverse_rotate.c \
-	srcs/push_swap/rotate.c \
-	srcs/push_swap/swap.c \
-	srcs/push_swap/main.c \
-	libft/ft_lstadd_back.c \
+SRCS = libft/ft_lstadd_back.c \
 	libft/ft_lstadd_front.c \
 	libft/ft_lstclear.c \
 	libft/ft_lstdelone.c \
@@ -34,7 +28,15 @@ SRCS = srcs/push_swap/list.c \
 	libft/ft_lstnew.c \
 	libft/ft_lstsize.c \
 	libft/ft_putstr_fd.c \
-	libft/ft_strlen.c
+	libft/ft_strlen.c \
+	srcs/push_swap/list.c \
+	srcs/push_swap/main.c \
+	srcs/push_swap/ps_atoi.c \
+	srcs/push_swap/push.c \
+	srcs/push_swap/reverse_rotate.c \
+	srcs/push_swap/rotate.c \
+	srcs/push_swap/sort.c \
+	srcs/push_swap/swap.c 
 
 OBJS = $(SRCS:%.c=%.o)
 

@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:19:08 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/13 17:48:56 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:50:25 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,3 +66,4 @@ t_node	*quick_sort(t_node *head)
 	pivot->next = head;// 左右のソート済みリストを連結
 	return (pivot_node);// ソート済み部分リストの新たなピボットノードを返す
 }
+
