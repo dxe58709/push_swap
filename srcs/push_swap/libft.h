@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:54:21 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/14 14:30:45 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/14 17:52:02 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 typedef struct s_node
 {
-	void			*content;
+	int			*content;
 	int				data;
 	struct s_node	*next;
 	struct s_node	*stack_a;

@@ -6,7 +6,7 @@
 #    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 18:10:44 by nsakanou          #+#    #+#              #
-#    Updated: 2023/09/14 14:59:28 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/09/14 17:49:11 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,33 +14,36 @@ NAME = push_swap
 INCLUDES_DIR = ./Includes
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I $(INCLUDES_DIR) -I ./libft -I ./srcs/push_swap
+CFLAGS = -Wall -Wextra -Werror -I $(INCLUDES_DIR) -I ./srcs/push_swap/libft -I ./srcs/push_swap
 RM = rm -f
 
-SRCS = libft/ft_lstadd_back.c \
-	libft/ft_lstadd_front.c \
-	libft/ft_lstclear.c \
-	libft/ft_lstdelone.c \
-	libft/ft_lstfree.c \
-	libft/ft_lstiter.c \
-	libft/ft_lstlast.c \
-	libft/ft_lstmap.c \
-	libft/ft_lstnew.c \
-	libft/ft_lstsize.c \
-	libft/ft_putstr_fd.c \
-	libft/ft_strlen.c \
+SRCS = srcs/push_swap/command/push.c \
+	srcs/push_swap/command/reverse_rotate.c \
+	srcs/push_swap/command/rotate.c \
+	srcs/push_swap/command/swap.c \
+	srcs/push_swap/coordinate_compression.c \
+	srcs/push_swap/create_node.c \
+	srcs/push_swap/libft/ft_lstadd_back.c \
+	srcs/push_swap/libft/ft_lstadd_front.c \
+	srcs/push_swap/libft/ft_lstclear.c \
+	srcs/push_swap/libft/ft_lstdelone.c \
+	srcs/push_swap/libft/ft_lstfree.c \
+	srcs/push_swap/libft/ft_lstiter.c \
+	srcs/push_swap/libft/ft_lstlast.c \
+	srcs/push_swap/libft/ft_lstmap.c \
+	srcs/push_swap/libft/ft_lstnew.c \
+	srcs/push_swap/libft/ft_lstsize.c \
+	srcs/push_swap/libft/ft_putstr_fd.c \
+	srcs/push_swap/libft/ft_strlen.c \
 	srcs/push_swap/list.c \
 	srcs/push_swap/main.c \
 	srcs/push_swap/ps_atoi.c \
-	srcs/push_swap/push.c \
-	srcs/push_swap/reverse_rotate.c \
-	srcs/push_swap/rotate.c \
 	srcs/push_swap/sort.c \
-	srcs/push_swap/swap.c 
+	srcs/push_swap/sort_three.c
 
 OBJS = $(SRCS:%.c=%.o)
 
-LIBDIR = ./libft
+LIBDIR = ./srcs/push_swap/libft
 LIBFT = $(LIBDIR)/libft.a
 
 all: $(NAME)
