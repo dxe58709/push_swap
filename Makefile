@@ -6,7 +6,7 @@
 #    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 18:10:44 by nsakanou          #+#    #+#              #
-#    Updated: 2023/09/14 17:49:11 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/09/19 19:06:54 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,9 @@ CFLAGS = -Wall -Wextra -Werror -I $(INCLUDES_DIR) -I ./srcs/push_swap/libft -I .
 RM = rm -f
 
 SRCS = srcs/push_swap/command/push.c \
-	srcs/push_swap/command/reverse_rotate.c \
 	srcs/push_swap/command/rotate.c \
+	srcs/push_swap/command/reverse_rotate.c \
 	srcs/push_swap/command/swap.c \
-	srcs/push_swap/coordinate_compression.c \
-	srcs/push_swap/create_node.c \
 	srcs/push_swap/libft/ft_lstadd_back.c \
 	srcs/push_swap/libft/ft_lstadd_front.c \
 	srcs/push_swap/libft/ft_lstclear.c \
@@ -39,7 +37,9 @@ SRCS = srcs/push_swap/command/push.c \
 	srcs/push_swap/main.c \
 	srcs/push_swap/ps_atoi.c \
 	srcs/push_swap/sort.c \
-	srcs/push_swap/sort_three.c
+	#srcs/push_swap/sort_three.c \
+	srcs/push_swap/create_node.c \
+	srcs/push_swap/coordinate_compression.c \
 
 OBJS = $(SRCS:%.c=%.o)
 

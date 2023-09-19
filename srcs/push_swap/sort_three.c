@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 14:31:17 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/14 17:33:16 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/19 19:04:37 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	sort_three(t_node **stack_a)
 	int	second;
 	int	third;
 
-	first = (*stack_a)->content;
-	second = (*stack_a)->next->content;
-	third = (*stack_a)->next->next->content;
+	first = *(*stack_a)->content;
+	second = *(*stack_a)->next->content;
+	third = *(*stack_a)->next->next->content;
 	if (first > second && first < third && second < third)
 		sa(stack_a);
 	if (first > second && first > third && second < third)
@@ -42,7 +42,7 @@ void	sort_three(t_node **stack_a)
 void	ft_sort(t_node **stack_a, t_node **stack_b)
 {
 	int	argc;
-
+	
 	argc = 0;
 	if (argc == 2)
 		sa(stack_a);

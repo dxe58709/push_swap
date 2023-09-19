@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:58:51 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/14 17:53:15 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/19 18:52:58 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 
 // 循環リストの構造体
-struct s_node
+struct s_cyclist 
 {
-	struct Node	*head;
-}t_node;
+	struct s_node	*head;
+};
+
 
 // 新しいノードを作成する関数
 t_node	*create_node(int data)
