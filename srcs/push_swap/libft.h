@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:54:21 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/19 18:53:25 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/20 15:42:02 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_node
 	struct s_node	*next;
 	struct s_node	*stack_a;
 	struct s_node	*stack_b;
+	struct s_node	*head;
 }t_node;
 
 t_node	*ft_lstnew(void *content);

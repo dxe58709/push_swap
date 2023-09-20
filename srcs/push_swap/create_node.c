@@ -6,20 +6,11 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:58:51 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/19 18:52:58 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/20 17:25:33 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h" 
-#include <stdio.h>
-
-
-// 循環リストの構造体
-struct s_cyclist 
-{
-	struct s_node	*head;
-};
-
 
 // 新しいノードを作成する関数
 t_node	*create_node(int data)
@@ -55,7 +46,7 @@ void	append_node(t_node *list, int data)
 }
 
 // 循環リストの内容を表示する関数
-void	display_list(struct s_cyclist *list)
+void	display_list(t_node *list)
 {
 	t_node	*current;
 

@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 18:01:11 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/19 18:54:24 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/20 17:37:24 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft.h"
 # include <stdlib.h> 
+# include <stdio.h> 
 # include <limits.h>
 # include <unistd.h>
 # include <stddef.h>
@@ -23,8 +24,6 @@
 
 
 int		ps_atoi(const char *str, int *flag);
-
-t_node	*create_sentinel_node(void);//番兵ノードを作成する関数(list.c)
 
 void	swap(t_node **stack);
 void	sa(t_node **stack_a);
@@ -43,8 +42,12 @@ void	rra(t_node **stack_a);
 void	rrb(t_node **stack_b);
 
 t_node	*create_node(int data);
+void    append_node(t_node *list, int data);
+void    display_list(t_node *list);
 
 t_node	*partition(t_node *head, t_node **pivot);
 t_node	*quick_sort(t_node *head);
+
+void	coordinate_compression(int *temp1, int *temp2, int *temp3, int argc);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 18:10:44 by nsakanou          #+#    #+#              #
-#    Updated: 2023/09/19 19:06:54 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/09/20 17:03:49 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,13 +33,12 @@ SRCS = srcs/push_swap/command/push.c \
 	srcs/push_swap/libft/ft_lstsize.c \
 	srcs/push_swap/libft/ft_putstr_fd.c \
 	srcs/push_swap/libft/ft_strlen.c \
-	srcs/push_swap/list.c \
 	srcs/push_swap/main.c \
 	srcs/push_swap/ps_atoi.c \
 	srcs/push_swap/sort.c \
+	srcs/push_swap/coordinate_compression.c \
 	#srcs/push_swap/sort_three.c \
 	srcs/push_swap/create_node.c \
-	srcs/push_swap/coordinate_compression.c \
 
 OBJS = $(SRCS:%.c=%.o)
 
