@@ -18,6 +18,11 @@ t_node	*create_node(int data)
 	t_node	*new_node;
 
 	new_node = (t_node *)malloc(sizeof(t_node));
+  if (!new_node)
+  {
+    printf("memory failed.\n");
+    exit(1);
+  }
 	new_node->data = data;
 	new_node->next = NULL;
 	return (new_node);
@@ -67,10 +72,10 @@ void	display_list(t_node *list)
 	printf("\n");
 }
 
-/*
+
 int main()
 {
-	struct cyclist	list;
+	t_node	list;
 
 	list.head = NULL;
 
@@ -81,6 +86,15 @@ int main()
 	printf("Circular Linked List: ");
 	display_list(&list);
 
-	return 0;
+  t_node  *current = list.head;
+  while (current)
+    {
+        t_node *temp = current->next;
+        free(current);
+        current = temp;
+        if (current == list.head)
+            break;
+    }
+  return (0);
 }
-*/
+
