@@ -6,11 +6,11 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:07:25 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/14 15:47:44 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:52:50 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h" 
+#include "../push_swap.h" 
 
 void	reverse_rotate(t_node **stack)
 {

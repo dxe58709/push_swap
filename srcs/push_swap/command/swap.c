@@ -6,11 +6,11 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:57:04 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/14 15:47:06 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/25 16:08:45 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h" 
+#include "../push_swap.h" 
 
 void	swap(t_node **stack)
 {

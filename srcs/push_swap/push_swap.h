@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 18:01:11 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/20 17:37:24 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/25 19:59:50 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <stddef.h>
 # include <string.h>
 # include <ctype.h>
-
+# include <stdbool.h>
 
 int		ps_atoi(const char *str, int *flag);
 
@@ -41,13 +41,14 @@ void	reverse_rotate(t_node **stack);
 void	rra(t_node **stack_a);
 void	rrb(t_node **stack_b);
 
-t_node	*create_node(int data);
-void    append_node(t_node *list, int data);
-void    display_list(t_node *list);
+t_stack	*create_stack(void);
+void	create_node(t_stack *stack, int data);
+int		destory_node(t_stack *stack);
 
 t_node	*partition(t_node *head, t_node **pivot);
 t_node	*quick_sort(t_node *head);
 
-void	coordinate_compression(int *temp1, int *temp2, int *temp3, int argc);
+int		*coordinate_compression(int argc, char **argv);
 
+void	*ps_calloc(size_t count, size_t size);
 #endif

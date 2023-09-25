@@ -6,13 +6,13 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 11:11:23 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/14 13:35:07 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/25 17:40:55 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h" 
 
-static int	ft_isdigit(char c)
+int	ft_isdigit(char c)
 {
 	return (c >= '0' && c <= '9');
 }

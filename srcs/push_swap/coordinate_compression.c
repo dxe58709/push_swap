@@ -6,17 +6,13 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 16:38:03 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/20 17:37:20 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/25 20:13:19 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node  *create_node(int data);
-void    append_node(t_node *list, int data);
-void    display_list(t_node *list);
-
-void	b_sort(int argc, int *temp2)
+static void	b_sort(int argc, int *temp2)
 {
 	int		i;
 	int		j;
@@ -45,13 +41,31 @@ void	b_sort(int argc, int *temp2)
 	}
 }
 
-void	coordinate_compression(int *temp1, int *temp2, int *temp3, int argc)
+static void	add_argv(int *temp1, int argc, char **argv)
 {
-	int		i = 0;
-	int		j = 0;
-	int		temp;
+	int	i = 1;
+	//splitしたバージョンと普通のバージョン
+	while (i < argc)
+	{
+		temp1[i - 1] = atoi((argv[i]));
+		i++;
+	}
+}
 
+int	*coordinate_compression(int argc, char **argv)
+{
+	int	*temp1;
+	int	*temp2;
+	int	*temp3;
+	int	i = 0;
+	int	j = 0;
+
+	temp1 = ps_calloc((argc - 1), sizeof(int));
+	add_argv(temp1, argc, argv);
+	temp2 = ps_calloc((argc - 1), sizeof(int));
+	add_argv(temp2, argc, argv);
 	b_sort(argc, temp2);
+	temp3 = ps_calloc((argc - 1), sizeof(int));
 	i = 0;
 	while (i < argc - 1)
 	{
@@ -66,9 +80,11 @@ void	coordinate_compression(int *temp1, int *temp2, int *temp3, int argc)
 		}
 		i++;
 	}
+	return (temp3);
 }
 
-int	main(int argc, char **argv)
+
+/*int	main(int argc, char **argv)
 {
 	int *flag = 0;
 	int *temp1 = malloc((argc - 1)*sizeof(int));
@@ -90,7 +106,7 @@ int	main(int argc, char **argv)
 		i++;
 	}
    
-	t_node **list;
+	t_node **list = NULL;
 
    append_node(list[0], 1);
    append_node(list[1], 2);
@@ -101,4 +117,4 @@ int	main(int argc, char **argv)
 
    return 0;
 }
-
+*/

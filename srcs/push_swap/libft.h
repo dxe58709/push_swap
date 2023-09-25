@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:54:21 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/20 15:42:02 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/25 21:54:02 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,19 @@
 
 typedef struct s_node
 {
-	int			*content;
+	void			*content;
+	struct s_node	*lst;
 	int				data;
 	struct s_node	*next;
-	struct s_node	*stack_a;
-	struct s_node	*stack_b;
-	struct s_node	*head;
 }t_node;
+
+typedef struct s_stack
+{
+	struct s_node	*head;
+	struct s_node	*end;
+	int				current;
+	int				max;
+}t_stack;
 
 t_node	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_node **lst, t_node *new);

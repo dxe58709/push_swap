@@ -6,11 +6,11 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:54:31 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/20 15:01:31 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:52:07 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	push(t_node **src, t_node **dst)//src から dst に要素を移動する関数
 {

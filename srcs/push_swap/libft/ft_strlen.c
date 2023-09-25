@@ -6,11 +6,11 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:27:33 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/05 15:31:57 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/25 16:10:30 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 size_t	ft_strlen(const char *str)
 {

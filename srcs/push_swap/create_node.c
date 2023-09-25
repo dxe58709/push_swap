@@ -6,95 +6,80 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:58:51 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/20 17:25:33 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/09/25 20:46:20 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h" 
 
-// 新しいノードを作成する関数
-t_node	*create_node(int data)
+t_stack	*create_stack(void)
 {
-	t_node	*new_node;
+	t_stack	*a;
 
-	new_node = (t_node *)malloc(sizeof(t_node));
-  if (!new_node)
+	a = (t_stack *)malloc(sizeof(t_stack));
+  if (!a)
   {
     printf("memory failed.\n");
     exit(1);
   }
-	new_node->data = data;
-	new_node->next = NULL;
-	return (new_node);
+	a->head = NULL;
+	a->end = NULL;
+	return (a);
 }
 
-// 循環リストにノードを追加する関数
-void	append_node(t_node *list, int data)
+// 新しいノードを作成する関数
+void	create_node(t_stack *stack, int data)
 {
 	t_node	*new_node;
-	t_node	*current;
 
-	new_node = create_node(data);
-	if (list->head == NULL)
+	new_node = (t_node *)malloc(sizeof(t_node));
+	if (!new_node)
 	{
-		list->head = new_node;
-		new_node->next = new_node;// リストを循環させる
+		printf("memory failed.\n");
+		exit(1);
+	}
+	printf("aaaa\n");
+	new_node->data = data;
+	new_node->next = NULL;
+	if (!stack->head)
+	{
+		stack->head = new_node;
+		stack->end = new_node;
 	}
 	else
 	{
-		current = list->head;
-		while (current->next != list->head)
-			current = current->next;
-		current->next = new_node;
-		new_node->next = list->head;
+		stack->head->next = new_node;
+		stack->head = new_node;
 	}
-}
-
-// 循環リストの内容を表示する関数
-void	display_list(t_node *list)
-{
-	t_node	*current;
-
-	// リストが空の場合、メッセージを表示して関数を終了
-	if (list->head == NULL)
+	if (stack->end == new_node)
 	{
-		printf("List is empty.\n");
-		return ;
+		stack->end->next = NULL;
 	}
-	current = list->head;// 現在のノードをリストの先頭に設定
-	while (current != NULL)// ループを使用してリスト内の要素を表示
-	{
-		printf("%d -> ", current->data);// 現在のノードのデータを表示
-		current = current->next;
-		if (current == list->head)// リストを一周した場合、ループを終了
-			break ;
-	}
-	printf("\n");
 }
 
-
-int main()
+int	destory_node(t_stack *stack)
 {
-	t_node	list;
+	t_node	*temp;
+	int		data;
 
-	list.head = NULL;
+//error:headがNULLの時error出力してexit
+	if (stack->head == NULL)
+	{
+		printf("memory failed.\n");
+		exit(1);
+	}
 
-	append_node(&list, 1);
-	append_node(&list, 2);
-	append_node(&list, 3);
-
-	printf("Circular Linked List: ");
-	display_list(&list);
-
-  t_node  *current = list.head;
-  while (current)
-    {
-        t_node *temp = current->next;
-        free(current);
-        current = temp;
-        if (current == list.head)
-            break;
-    }
-  return (0);
+	temp = stack->head;
+	data = temp->data;
+	if (stack->head == stack->end)
+	{
+		stack->head = NULL;
+		stack->end = NULL;
+	}
+	else
+	{
+		stack->head->next = NULL;
+	}
+	free(temp);
+	return (data);
 }
-
