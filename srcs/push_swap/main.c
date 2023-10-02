@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:39:25 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/25 20:59:46 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/02 18:45:42 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main(int argc, char **argv)
 	while (--argc)
 		create_node(stack_a, temp3[argc - 1]);//後ろから入れてく
 	free(temp3);
+	sort_three(stack_a);
 	while (stack_a->end)
 	{
 		printf("node %d\n", stack_a->end->data);
@@ -63,7 +64,7 @@ int	main()
 	stack_new = ft_lstnew(j);
 	ft_lstadd_back(&stack_a, stack_new);
 
-	sa(&stack_a);
+	pa(&stack_a);
 	ft_lstiter(stack_a, print_stack);
 	ft_lstclear(&stack_a, free);
 }

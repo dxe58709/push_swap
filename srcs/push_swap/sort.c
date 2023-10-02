@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:19:08 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/25 17:31:16 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/02 17:23:33 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,43 @@ t_node	*quick_sort(t_node *head)
 	return (pivot_node);// ソート済み部分リストの新たなピボットノードを返す
 }
 
+// リストを表示する関数
+void print_list(t_node *head) {
+    t_node *current = head;
+    do {
+        printf("%d ", current->data);
+        current = current->next;
+    } while (current != head);
+    printf("\n");
+}
+
+// int main()
+// {
+//     t_stack stack;
+//     stack.head = NULL;
+//     stack.end = NULL;
+//     stack.current = 0;
+//     stack.max = 0;
+
+//     // ソート対象のデータを t_stack に追加
+//     int data1 = 3;
+//     int data2 = 1;
+//     int data3 = 2;
+//     int data4 = 5;
+//     int data5 = 4;
+
+//     // データを t_stack に追加
+//     push(&(stack.head), &(stack.current), data1);
+//     push(&(stack.head), &(stack.current), data2);
+//     push(&(stack.head), &(stack.current), data3);
+//     push(&(stack.head), &(stack.current), data4);
+//     push(&(stack.head), &(stack.current), data5);
+
+//     // クイックソートを実行
+//     stack.head = quick_sort(stack.head);
+
+//     // ソート後のリストを表示
+//     print_list(stack.head);
+
+//     return 0;
+// }

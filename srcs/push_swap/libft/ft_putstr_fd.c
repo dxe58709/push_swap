@@ -6,11 +6,11 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:04:07 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/25 16:09:50 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/02 14:33:27 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

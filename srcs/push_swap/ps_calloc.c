@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:33:59 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/25 21:01:25 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/02 18:36:02 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	*ps_calloc(size_t count, size_t size)
 	new = (void *)malloc(count * size);
 	if (new == NULL)
 	{
-		printf("error.\n");
+		printf("Memory failed.\n");
 		exit(1);
 	}
 	ft_bzero(new, (count * size));

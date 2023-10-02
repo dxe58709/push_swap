@@ -6,7 +6,7 @@
 #    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 18:10:44 by nsakanou          #+#    #+#              #
-#    Updated: 2023/09/25 20:04:34 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/10/02 16:01:51 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,11 @@ SRCS =	srcs/push_swap/check_args.c \
 	srcs/push_swap/command/swap.c \
 	srcs/push_swap/coordinate_compression.c \
 	srcs/push_swap/create_node.c \
+	srcs/push_swap/ft_lstfree.c \
 	srcs/push_swap/libft/ft_lstadd_back.c \
 	srcs/push_swap/libft/ft_lstadd_front.c \
 	srcs/push_swap/libft/ft_lstclear.c \
 	srcs/push_swap/libft/ft_lstdelone.c \
-	srcs/push_swap/libft/ft_lstfree.c \
 	srcs/push_swap/libft/ft_lstiter.c \
 	srcs/push_swap/libft/ft_lstlast.c \
 	srcs/push_swap/libft/ft_lstmap.c \
@@ -36,11 +36,11 @@ SRCS =	srcs/push_swap/check_args.c \
 	srcs/push_swap/libft/ft_lstsize.c \
 	srcs/push_swap/libft/ft_putstr_fd.c \
 	srcs/push_swap/libft/ft_strlen.c \
-	srcs/push_swap/ps_atoi.c \
 	srcs/push_swap/main.c \
+	srcs/push_swap/ps_atoi.c \
+	srcs/push_swap/ps_calloc.c \
 	srcs/push_swap/sort.c \
-	srcs/push_swap/sort_three.c \
-	srcs/push_swap/ps_calloc.c
+	srcs/push_swap/sort_three.c 
 
 OBJS = $(SRCS:%.c=%.o)
 

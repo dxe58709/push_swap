@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 18:01:11 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/25 19:59:50 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/02 17:25:17 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,7 @@ t_node	*quick_sort(t_node *head);
 int		*coordinate_compression(int argc, char **argv);
 
 void	*ps_calloc(size_t count, size_t size);
+
+// sort three
+void	sort_three(t_node **stack_a);
 #endif

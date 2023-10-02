@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:58:51 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/25 20:46:20 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/02 16:10:09 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	create_node(t_stack *stack, int data)
 		printf("memory failed.\n");
 		exit(1);
 	}
-	printf("aaaa\n");
 	new_node->data = data;
 	new_node->next = NULL;
 	if (!stack->head)
@@ -68,7 +67,6 @@ int	destory_node(t_stack *stack)
 		printf("memory failed.\n");
 		exit(1);
 	}
-
 	temp = stack->head;
 	data = temp->data;
 	if (stack->head == stack->end)

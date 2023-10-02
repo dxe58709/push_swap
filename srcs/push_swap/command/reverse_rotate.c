@@ -6,44 +6,45 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:07:25 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/25 15:52:50 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/02 18:28:40 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h" 
 
-void	reverse_rotate(t_node **stack)
+void	reverse_rotate(t_stack *stack)
 {
 	t_node	*head;
-	t_node	*tail;
+	t_node	*end;
 	t_node	*sentinel;
 
-	if (*stack == NULL || (*stack)->next == NULL)// リストが空または1つのノードしかない場合、何もしない
+	if (stack == NULL || stack->head == NULL
+		|| stack->head->next == NULL)// リストが空または1つのノードしかない場合、何もしない
 		return ;
 
-	head = *stack;// 現在のヘッド
-	tail = *stack;// 新しいヘッド
-	sentinel = *stack;
+	head = stack->head;// 現在のヘッド
+	end = stack->head;// 新しいヘッド
+	sentinel = stack->head;
 
 	while (sentinel->next != NULL)
 	{
-		tail = sentinel;
+		end = sentinel;
 		sentinel = sentinel->next;
 	}
 
 	// 新しいヘッドの位置を設定
-	tail->next = NULL;
+	end->next = NULL;
 	sentinel->next = head;
-	*stack = sentinel;
+	stack->head = sentinel;
 }
 
-void	rra(t_node **stack_a)
+void	rra(t_stack *stack_a)
 {
 	reverse_rotate(stack_a);
 	ft_putstr_fd("rra\n", STDOUT_FILENO);
 }
 
-void	rrb(t_node **stack_b)
+void	rrb(t_stack *stack_b)
 {
 	reverse_rotate(stack_b);
 	ft_putstr_fd("rrb\n", STDOUT_FILENO);
