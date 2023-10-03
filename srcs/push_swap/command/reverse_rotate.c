@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:07:25 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/02 18:28:40 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/03 14:18:57 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,18 @@
 
 void	reverse_rotate(t_stack *stack)
 {
-	t_node	*head;
-	t_node	*end;
-	t_node	*sentinel;
+	t_node	*tmp;
 
-	if (stack == NULL || stack->head == NULL
-		|| stack->head->next == NULL)// リストが空または1つのノードしかない場合、何もしない
-		return ;
-
-	head = stack->head;// 現在のヘッド
-	end = stack->head;// 新しいヘッド
-	sentinel = stack->head;
-
-	while (sentinel->next != NULL)
+	if (stack->end && stack->end != stack->head)
 	{
-		end = sentinel;
-		sentinel = sentinel->next;
+		tmp = stack->end;
+		stack->end = stack->end->next;
+		stack->end->prev = NULL;
+		tmp->next = NULL;
+		stack->head->next = tmp;
+		tmp->prev = stack->head;
+		stack->head = tmp;
 	}
-
-	// 新しいヘッドの位置を設定
-	end->next = NULL;
-	sentinel->next = head;
-	stack->head = sentinel;
 }
 
 void	rra(t_stack *stack_a)

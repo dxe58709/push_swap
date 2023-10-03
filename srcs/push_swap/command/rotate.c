@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:03:33 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/02 18:31:11 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/03 14:05:04 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,18 @@
 
 void	rotate(t_stack *stack)
 {
-	t_node	*head;
-	t_node	*end;
+	t_node	*tmp;
 
-	if (stack == NULL || stack->head == NULL
-		|| stack->head->next == NULL)// リストが空または1つのノードしかない場合、何もしない
-		return ;
-
-	head = stack->head;// 現在のヘッド
-	end = stack->head;
-
-	while (end->next != NULL)
-		end = end->next;
-
-// 新しいヘッドの位置を設定
-	stack->head = head->next;
-	end->next = head;
-	head->next = NULL;
+	if (stack->head && stack->head != stack->end)
+	{
+		tmp = stack->head;
+		stack->head = stack->head->prev;
+		stack->head->next = NULL;
+		tmp->prev = NULL;
+		stack->end->prev = tmp;
+		tmp->next = stack->end;
+		stack->end = tmp;
+	}
 }
 
 void	ra(t_stack *stack_a)

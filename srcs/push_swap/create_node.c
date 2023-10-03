@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:58:51 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/02 16:10:09 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/03 13:55:38 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	create_node(t_stack *stack, int data)
 		exit(1);
 	}
 	new_node->data = data;
+	new_node->prev = NULL;
 	new_node->next = NULL;
 	if (!stack->head)
 	{
@@ -48,11 +49,8 @@ void	create_node(t_stack *stack, int data)
 	else
 	{
 		stack->head->next = new_node;
+		new_node->prev = stack->head;
 		stack->head = new_node;
-	}
-	if (stack->end == new_node)
-	{
-		stack->end->next = NULL;
 	}
 }
 
@@ -76,6 +74,7 @@ int	destory_node(t_stack *stack)
 	}
 	else
 	{
+		stack->head = stack->head->prev;
 		stack->head->next = NULL;
 	}
 	free(temp);
