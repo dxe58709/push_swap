@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:26:16 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/03 17:34:36 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/06 17:16:08 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,21 @@ int	search_zeroone(t_stack *stack, int *data)
 {
 	t_node	*tmp;
 	int		count;
+	int		flag;
 
 	tmp = stack->head;
 	count = 0;
+	flag = -1;
 	while (tmp)
 	{
 		count++;
 		if (tmp->data == data[0] || tmp->data == data[1])
-			break ;
+		{
+			return (count);
+		}
 		tmp = tmp->prev;
 	}
-	return (count);
+	return (flag);
 }
 
 void	ra_or_rra(t_stack *stack, int *data)

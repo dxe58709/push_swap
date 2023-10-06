@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 18:01:11 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/03 16:59:21 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/06 17:07:57 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,7 @@ void	*ps_calloc(size_t count, size_t size);
 
 // sort three
 void	sort_three(t_stack *stack_a);
+int		search_zeroone(t_stack *stack, int *data);
 void	sort_five(t_stack *stack_a);
+void	sort_any(t_stack *stack_a);
 #endif

@@ -6,7 +6,7 @@
 #    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 18:10:44 by nsakanou          #+#    #+#              #
-#    Updated: 2023/10/03 17:01:08 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/10/06 14:29:02 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ SRCS =	srcs/push_swap/check_args.c \
 	srcs/push_swap/main.c \
 	srcs/push_swap/ps_atoi.c \
 	srcs/push_swap/ps_calloc.c \
-	srcs/push_swap/sort.c \
+	srcs/push_swap/sort_any.c \
 	srcs/push_swap/sort_three.c \
 	srcs/push_swap/sort_five.c 
 
