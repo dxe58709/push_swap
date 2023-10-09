@@ -49,5 +49,7 @@ void	lst_free(t_node **stack_a, t_node **stack_b);
 
 void	ft_putstr_fd(char *s, int fd);
 size_t	ft_strlen(const char *str);
+char	**ft_split(char const *s, char c);
+size_t▸-ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 #endif

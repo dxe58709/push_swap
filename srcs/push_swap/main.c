@@ -21,15 +21,13 @@ int	main(int argc, char **argv)
 	//split 入れる
 	//第二引数にsplitがくる ./a.out "1 3 5"
 	// ./a.out "1 3 5" 7とかはerrorにしとく
-
+  //if (argc == 2 && argv[1][0] == )
+  //{
 	temp3 = coordinate_compression(argc, argv);
 	stack_a = create_stack();
 	stack_a->current = argc - 1;
 	stack_a->max = argc - 1;
 
-	// printf("%d\n", temp3[0]);
-	// printf("%d\n", temp3[1]);
-	// printf("%d\n", temp3[2]);
 	while (--argc)
 		create_node(stack_a, temp3[argc - 1]);//後ろから入れてく
 	free(temp3);
@@ -37,12 +35,12 @@ int	main(int argc, char **argv)
 	// sort_three(stack_a);
 	//sort_five(stack_a);
 	sort_any(stack_a);
-	// while (stack_a->head)
-	// {
-	// 	printf("node %d\n", stack_a->head->data);
-	// 	stack_a->head = stack_a->head->prev;
-	// }
-	// // printf("b: node %d\n", stack_b->head->data);
+	 while (stack_a->head)
+	 {
+	 	printf("node %d\n", stack_a->head->data);
+	 	stack_a->head = stack_a->head->prev;
+	 }
+	// printf("b: node %d\n", stack_b->head->data);
 	// return (0);
 }
 
