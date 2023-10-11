@@ -1,25 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 11:44:30 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/05/31 17:06:32 by nsakanou         ###   ########.fr       */
+/*   Created: 2023/05/18 11:52:24 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/06/11 13:14:43 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+static void	copy(unsigned char *dst, unsigned char *src, size_t len)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (dst > src)
 	{
-		i++;
+		while (len > 0)
+		{
+			dst[len - 1] = src[len - 1];
+			len--;
+		}
 	}
-	return (i);
+	else
+	{
+		while (i < len)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+	}
+}
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	unsigned char	*d;
+	unsigned char	*s;
+	size_t			i;
+
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	i = 0;
+	if (d == s)
+		return (d);
+	copy(d, s, len);
+	return (d);
 }

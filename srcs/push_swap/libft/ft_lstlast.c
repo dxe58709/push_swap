@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:52:48 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/08 15:47:34 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/06/05 18:28:43 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_node	*ft_lstlast(t_node *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	while (lst)
 	{

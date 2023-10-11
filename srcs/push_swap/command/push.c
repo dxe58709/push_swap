@@ -6,19 +6,19 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:54:31 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/03 14:37:38 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/11 15:56:03 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	push(t_stack *src, t_stack *dst)//dst から src に要素を移動する関数
+void	push(t_stack *src, t_stack *dst)
 {
 	int	data;
 
 	if (dst->head)
 	{
-		data = destory_node(dst);
+		data = destroy_node(dst);
 		create_node(src, data);
 		dst->current--;
 		src->current++;

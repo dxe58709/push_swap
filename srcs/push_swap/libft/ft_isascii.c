@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/05 17:08:19 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/06/08 14:46:57 by nsakanou         ###   ########.fr       */
+/*   Created: 2023/05/18 09:39:13 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/06/09 16:54:53 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+int	ft_isascii(int c)
 {
-	if (! lst || !del)
-		return ;
-	del(lst -> content);
-	free(lst);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }

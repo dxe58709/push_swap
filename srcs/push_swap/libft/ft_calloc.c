@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: N <N@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 16:19:39 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/06/08 14:47:16 by nsakanou         ###   ########.fr       */
+/*   Created: 2023/05/29 17:02:49 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/06/05 16:00:22 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void	*content)
+void	*ft_calloc(size_t count, size_t size)
 {
-	t_list	*new;
+	void	*new;
 
-	new = (t_list *)malloc(sizeof(t_list));
+	if (count == 0 || size == 0)
+	{
+		count = 1;
+		size = 1;
+	}
+	if (size > SIZE_MAX / count)
+		return (0);
+	new = (void *)malloc(count * size);
 	if (new == NULL)
 		return (NULL);
-	new -> content = content;
-	new -> next = NULL;
+	ft_bzero(new, (count * size));
 	return (new);
 }

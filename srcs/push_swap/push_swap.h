@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 18:01:11 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/06 17:07:57 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/11 17:09:41 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+# include "ft_printf.h"
 # include <stdlib.h> 
 # include <stdio.h> 
 # include <limits.h>
@@ -22,6 +23,21 @@
 # include <string.h>
 # include <ctype.h>
 # include <stdbool.h>
+
+typedef struct s_node
+{
+	int				data;
+	struct s_node	*prev;
+	struct s_node	*next;
+}t_node;
+
+typedef struct s_stack
+{
+	struct s_node	*head;
+	struct s_node	*end;
+	int				current;
+	int				max;
+}t_stack;
 
 int		ps_atoi(const char *str, int *flag);
 
@@ -43,7 +59,7 @@ void	rrb(t_stack *stack_b);
 
 t_stack	*create_stack(void);
 void	create_node(t_stack *stack, int data);
-int		destory_node(t_stack *stack);
+int		destroy_node(t_stack *stack);
 
 t_node	*partition(t_node *head, t_node **pivot);
 t_node	*quick_sort(t_node *head);
@@ -57,4 +73,7 @@ void	sort_three(t_stack *stack_a);
 int		search_zeroone(t_stack *stack, int *data);
 void	sort_five(t_stack *stack_a);
 void	sort_any(t_stack *stack_a);
+
+void	ft_check_args(int argc, char **argv);
+void	ft_error(void);
 #endif

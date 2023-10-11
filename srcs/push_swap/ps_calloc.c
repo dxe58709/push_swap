@@ -6,25 +6,11 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:33:59 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/02 18:36:02 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/11 15:17:12 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	ft_bzero(void *s, size_t n)
-{
-	size_t			i;
-	unsigned char	*ptr;
-
-	i = 0;
-	ptr = (unsigned char *)s;
-	while (i < n)
-	{
-		ptr[i] = 0;
-		i++;
-	}
-}
 
 void	*ps_calloc(size_t count, size_t size)
 {

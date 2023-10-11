@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_args.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/11 17:02:14 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/10/11 17:02:18 by nsakanou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	ft_contains(int num, char **argv, int *flag)
 {
-  int i;
+	int	i;
 
-  i = 0;
+	i = 0;
 	i++;
 	while (argv[i])
 	{
@@ -49,13 +61,13 @@ void	ft_check_args(int argc, char **argv)
 	{
 		tmp = ft_atoi(args[i]);
 		if (!ft_isnum(args[i]))
-			ft_error("Error");
-		if (ft_contains(tmp, args, i))
-			ft_error("Error");
+			ft_error();
+		if (ft_contains(tmp, args, &i))
+			ft_error();
 		if (tmp < -2147483648 || tmp > 2147483647)
-			ft_error("Error");
+			ft_error();
 		i++;
 	}
-	if (argc == 2)
-		ft_free(args);
+//	if (argc == 2)
+//		ft_free(args);
 }

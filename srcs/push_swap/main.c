@@ -6,12 +6,11 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:39:25 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/06 18:36:14 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/11 17:10:57 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
@@ -32,7 +31,7 @@ int	main(int argc, char **argv)
 		create_node(stack_a, temp3[argc - 1]);//後ろから入れてく
 	free(temp3);
 
-	// sort_three(stack_a);
+	//sort_three(stack_a);
 	//sort_five(stack_a);
 	sort_any(stack_a);
 	 while (stack_a->head)

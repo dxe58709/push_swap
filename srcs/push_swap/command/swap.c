@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:57:04 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/03 13:58:00 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/11 16:24:13 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,5 @@ void	sb(t_stack *stack_b)
 	swap(stack_b);
 	ft_putstr_fd("sb\n", STDOUT_FILENO);
 }
+
+ss作る！！

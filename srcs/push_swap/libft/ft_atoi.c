@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
+/*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 11:11:23 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/11 15:17:53 by nsakanou         ###   ########.fr       */
+/*   Created: 2023/05/18 11:53:50 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/06/08 14:44:00 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h" 
+#include "libft.h"
 
 static int	ft_positiv(const char *str, int *count)
 {
@@ -28,7 +28,7 @@ static int	ft_positiv(const char *str, int *count)
 	return (i);
 }
 
-int	ps_atoi(const char *str, int *flag)
+int	ft_atoi(const char *str)
 {
 	int		i;
 	long	nb;
@@ -51,23 +51,6 @@ int	ps_atoi(const char *str, int *flag)
 			return ((int)LONG_MIN);
 		nb = nb * 10 + (str[i] - '0');
 		i++;
-		if (nb > INT_MAX || nb < INT_MIN)
-			*flag = -1;
 	}
 	return (nb * count);
 }
-
-/*
-#include <stdio.h>
-int	main()
-{
-	const char *str = "21474836490";
-	int	*flag;
-	*flag = '0';
-
-	printf("%p\n", flag);
-	printf("%d\n", ps_atoi(str, flag));
-	printf("%d\n", *flag);
-	printf("%ld:%d\n",21474836490, (int)21474836490 );
-}
-*/

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/01 14:24:36 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/10/11 15:35:24 by nsakanou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static size_t	ft_len(char const *s, char c)
@@ -71,4 +83,3 @@ char	**ft_split(char const *s, char c)
 	new[j] = NULL;
 	return (new);
 }
-

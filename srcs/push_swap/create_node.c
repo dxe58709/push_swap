@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:58:51 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/03 13:55:38 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/11 17:08:58 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ t_stack	*create_stack(void)
 	t_stack	*a;
 
 	a = (t_stack *)malloc(sizeof(t_stack));
-  if (!a)
-  {
-    printf("memory failed.\n");
-    exit(1);
-  }
+	if (!a)
+	{
+		printf("memory failed.\n");
+		exit(1);
+	}
 	a->head = NULL;
 	a->end = NULL;
 	return (a);
@@ -54,12 +54,11 @@ void	create_node(t_stack *stack, int data)
 	}
 }
 
-int	destory_node(t_stack *stack)
+int	destroy_node(t_stack *stack)
 {
 	t_node	*temp;
 	int		data;
 
-//error:headがNULLの時error出力してexit
 	if (stack->head == NULL)
 	{
 		printf("memory failed.\n");
