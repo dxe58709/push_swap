@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 18:01:11 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/12 18:36:46 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/13 18:42:48 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct s_stack
 	int				max;
 }t_stack;
 
-int		ps_atoi(const char *str, int *flag);
+int		ps_atoi(const char *str);
 
 void	swap(t_stack *stack);
 void	sa(t_stack *stack_a);
@@ -71,12 +71,15 @@ int		*coordinate_compression(int argc, char **argv);
 
 void	*ps_calloc(size_t count, size_t size);
 
-// sort three
 void	sort_three(t_stack *stack_a);
-int		search_zeroone(t_stack *stack, int *data);
+int		search_two(t_stack *stack, int *data);
 void	sort_five(t_stack *stack_a);
 void	sort_any(t_stack *stack_a);
 
 void	ft_check_args(int argc, char **argv);
+
 void	ft_error(void);
+void	memory_error(void);
+
+char	**ps_split(char const *s, char c);
 #endif

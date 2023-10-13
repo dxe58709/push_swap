@@ -6,13 +6,13 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:26:16 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/06 17:16:08 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/13 18:41:51 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	search_zeroone(t_stack *stack, int *data)
+int	search_two(t_stack *stack, int *data)
 {
 	t_node	*tmp;
 	int		count;
@@ -35,7 +35,7 @@ int	search_zeroone(t_stack *stack, int *data)
 
 void	ra_or_rra(t_stack *stack, int *data)
 {
-	if (search_zeroone(stack, data) > (stack->current / 2))
+	if (search_two(stack, data) > (stack->current / 2))
 	{
 		while (!(stack->head->data == data[0] || stack->head->data == data[1]))
 			rra(stack);

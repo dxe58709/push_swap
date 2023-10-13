@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 16:38:03 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/11 17:07:58 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/13 18:26:04 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,8 @@ static void	b_sort(int argc, int *temp2)
 				temp2[j] = temp2[j + 1];
 				temp2[j + 1] = temp;
 			}
-			else if (j != argc - 1 && temp2[j] == temp2[j+ 1])
-			{
-				printf("error\n");
-				exit(1);
-			}
+			else if (j != argc - 1 && temp2[j] == temp2[j + 1])
+				ft_error();
 			j++;
 		}
 		i++;
@@ -46,10 +43,9 @@ static void	add_argv(int *temp1, int argc, char **argv)
 	int	i;
 
 	i = 1;
-	//splitしたバージョンと普通のバージョン
 	while (i < argc)
 	{
-		temp1[i - 1] = atoi((argv[i]));
+		temp1[i - 1] = ps_atoi((argv[i]));
 		i++;
 	}
 }

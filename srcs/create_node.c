@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:58:51 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/11 17:08:58 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/13 18:29:43 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ t_stack	*create_stack(void)
 
 	a = (t_stack *)malloc(sizeof(t_stack));
 	if (!a)
-	{
-		printf("memory failed.\n");
-		exit(1);
-	}
+		memory_error();
 	a->head = NULL;
 	a->end = NULL;
 	return (a);
@@ -34,10 +31,7 @@ void	create_node(t_stack *stack, int data)
 
 	new_node = (t_node *)malloc(sizeof(t_node));
 	if (!new_node)
-	{
-		printf("memory failed.\n");
-		exit(1);
-	}
+		memory_error();
 	new_node->data = data;
 	new_node->prev = NULL;
 	new_node->next = NULL;
@@ -60,10 +54,7 @@ int	destroy_node(t_stack *stack)
 	int		data;
 
 	if (stack->head == NULL)
-	{
-		printf("memory failed.\n");
-		exit(1);
-	}
+		memory_error();
 	temp = stack->head;
 	data = temp->data;
 	if (stack->head == stack->end)

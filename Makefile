@@ -6,7 +6,7 @@
 #    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 18:10:44 by nsakanou          #+#    #+#              #
-#    Updated: 2023/10/12 19:33:44 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/10/13 15:09:26 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ RM = rm -f
 SRCS =	srcs/main.c \
 	srcs/ps_atoi.c \
 	srcs/ps_calloc.c \
+	srcs/ps_split.c \
 	srcs/sort_any.c \
 	srcs/sort_five.c \
 	srcs/sort_three.c \
@@ -56,12 +57,12 @@ $(PRINTF):
 	$(MAKE) -C $(PRINTFDIR) all
 
 clean:
-	@ make -C $(PRINTFDIR) clean
+	$(MAKE) fclean -C $(PRINTFDIR)
 	$(MAKE) fclean -C $(LIBDIR)
 	$(RM) $(OBJS)
 
 fclean: clean
-	@ make -C $(PRINTFDIR) clean
+	@ make -C $(PRINTFDIR) fclean
 	$(RM) $(NAME) $(LIBFT)
 
 re: fclean all

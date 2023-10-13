@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:19:08 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/06 19:17:45 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/13 14:46:35 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,6 @@ void	rb_or_rrb(t_stack *stack, int data)
 	}
 }
 
-
 void	sort_any(t_stack *stack_a)
 {
 	int		u[2];// u_30 u_10
@@ -150,12 +149,6 @@ void	sort_any(t_stack *stack_a)
 		}
 	}
 	sort_three(stack_a);
-	// while (stack_b->head)
-	// {
-	// 	printf("node b %d\n", stack_b->head->data);
-	// 	stack_b->head = stack_b->head->prev;
-	// }
-	// printf("b %d\n", stack_b->current - 1);
 	while (stack_a->current < stack_a->max)
 	{
 		// int 普通
@@ -163,25 +156,3 @@ void	sort_any(t_stack *stack_a)
 		pa(stack_a, stack_b);
 	}
 }
-
-// jot -r -s " " 100 -2147483648 2147483647      | wc - lで個数でる
-//  ./push_swap 9 8 7 6 5 4 3 2 1 10 11 12 13 14 15 16 17 18 19 20
-
-// void	sort_any(t_stack *stack_a, t_stack *stack_b, int *data, int	size)
-// {
-
-// 	i = size / 5 + size % 5;
-// 	while(i = size)
-// 	{
-// 		if (coordinate_compression < i)
-// 			pb();
-// 		else
-// 			ra();
-// 		count++;
-// 		if (count == size)
-// 		{
-// 			i += size / 5;
-// 			count = 0;
-// 		}
-// 	}
-// }

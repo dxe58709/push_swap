@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
+/*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 11:11:23 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/11 15:17:53 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/13 19:22:05 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ static int	ft_positiv(const char *str, int *count)
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if (ft_isdigit(str[i + 1]) == 0)
-			return (0);
+		if (!ft_isdigit(str[i + 1]))
+			ft_error();
 		if (str[i] == '-')
 			*count *= -1;
 		i++;
-	}	
+	}
 	return (i);
 }
 
-int	ps_atoi(const char *str, int *flag)
+int	ps_atoi(const char *str)
 {
 	int		i;
 	long	nb;
@@ -43,6 +43,8 @@ int	ps_atoi(const char *str, int *flag)
 		i++;
 	while (ft_isdigit(str[i]))
 	{
+		if (!ft_isdigit(str[i + 1]))
+			ft_error();
 		if (count == 1 && ((nb > LONG_MAX / 10)
 				|| ((nb == LONG_MAX / 10) && (str[i] - '0') > LONG_MAX % 10)))
 			return ((int)LONG_MAX);
@@ -51,23 +53,6 @@ int	ps_atoi(const char *str, int *flag)
 			return ((int)LONG_MIN);
 		nb = nb * 10 + (str[i] - '0');
 		i++;
-		if (nb > INT_MAX || nb < INT_MIN)
-			*flag = -1;
 	}
 	return (nb * count);
 }
-
-/*
-#include <stdio.h>
-int	main()
-{
-	const char *str = "21474836490";
-	int	*flag;
-	*flag = '0';
-
-	printf("%p\n", flag);
-	printf("%d\n", ps_atoi(str, flag));
-	printf("%d\n", *flag);
-	printf("%ld:%d\n",21474836490, (int)21474836490 );
-}
-*/
