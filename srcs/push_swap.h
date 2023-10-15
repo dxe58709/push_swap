@@ -39,8 +39,6 @@ typedef struct s_stack
 	int				max;
 }t_stack;
 
-int		ps_atoi(const char *str);
-
 void	swap(t_stack *stack);
 void	sa(t_stack *stack_a);
 void	sb(t_stack *stack_b);

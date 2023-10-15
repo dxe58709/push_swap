@@ -22,7 +22,7 @@ static void	b_sort(int argc, int *temp2)
 	while (i < argc - 1)
 	{
 		j = 0;
-		while (j < argc - 2 - i)
+		while (j < argc - 1 - i)
 		{
 			if (temp2[j] > temp2[j + 1])
 			{
@@ -30,7 +30,7 @@ static void	b_sort(int argc, int *temp2)
 				temp2[j] = temp2[j + 1];
 				temp2[j + 1] = temp;
 			}
-			else if (j != argc - 1 && temp2[j] == temp2[j + 1])
+			else if (j != argc - 2 && temp2[j] == temp2[j + 1])
 				ft_error();
 			j++;
 		}
@@ -42,10 +42,10 @@ static void	add_argv(int *temp1, int argc, char **argv)
 {
 	int	i;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (i < argc - 1)
 	{
-		temp1[i - 1] = ps_atoi((argv[i]));
+		temp1[i] = ft_atoi((argv[i + 1]));
 		i++;
 	}
 }
@@ -80,3 +80,4 @@ int	*coordinate_compression(int argc, char **argv)
 	}
 	return (temp3);
 }
+

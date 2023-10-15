@@ -25,7 +25,6 @@ CFLAGS = -Wall -Wextra -Werror -I $(LIBDIR) -I $(PRINTFDIR)
 RM = rm -f
 
 SRCS =	srcs/main.c \
-	srcs/ps_atoi.c \
 	srcs/ps_calloc.c \
 	srcs/ps_split.c \
 	srcs/sort_any.c \

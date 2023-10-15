@@ -19,12 +19,12 @@ static int	ft_positiv(const char *str, int *count)
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if (!ft_isdigit(str[i + 1]))
-			ft_error();
+		if (ft_isdigit(str[i + 1]) == 0)
+			return (0);
 		if (str[i] == '-')
 			*count *= -1;
 		i++;
-	}
+	}	
 	return (i);
 }
 
@@ -34,17 +34,13 @@ int	ps_atoi(const char *str)
 	long	nb;
 	int		count;
 
-	i = 0;
-	nb = 0;
-	count = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+  i = 0;
+  nb = 0;
+	while (isspace(str[i]))
 		i++;
-	if (ft_positiv(str + i, &count) == 1)
-		i++;
+  i += ft_positiv(str + i, &count);
 	while (ft_isdigit(str[i]))
 	{
-		if (!ft_isdigit(str[i + 1]))
-			ft_error();
 		if (count == 1 && ((nb > LONG_MAX / 10)
 				|| ((nb == LONG_MAX / 10) && (str[i] - '0') > LONG_MAX % 10)))
 			return ((int)LONG_MAX);
@@ -54,5 +50,8 @@ int	ps_atoi(const char *str)
 		nb = nb * 10 + (str[i] - '0');
 		i++;
 	}
+  if (!ft_isdigit(str[i]) && !isspace(str[i]) && str[i] != '\0')
+    return 0;
 	return (nb * count);
 }
+

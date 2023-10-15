@@ -11,26 +11,34 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+./ 2 1 0 →0が来たらerrorになってしまう
+./ 2 1 引数二つの時セグフォ
+
 
 void	ft_check_args(int argc, char **argv)
 {
 	int		i;
-	int		*flag;
 	long	tmp;
 
 	i = 1;
-	flag = 0;
+  if (argc == 2)
+	{
+		argv = ps_split(argv[1], ' ');
+printf("argv]]%p\n", argv);
+		argc = 0;
+		while (argv[argc])
+			argc++;
+	}
 	if (argc >= 2)
 	{
 		while (argv[i])
 		{
-			tmp = ps_atoi(argv[i]);
+			tmp = ft_atoi(argv[i]);
 			if (tmp < -2147483648 || tmp > 2147483647)
 				ft_error();
 			i++;
 		}
 		return ;
 	}
-	else
-		ft_error();
 }
+
