@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 14:31:17 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/03 16:18:57 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/16 22:30:17 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,14 @@ void	sort_three(t_stack *stack_a)
 	first = stack_a->head;
 	second = first->prev;
 	third = second->prev;
-	while (!(first->data < second->data && second->data < third->data))
-	{
-		first = stack_a->head;
-		second = first->prev;
-		third = second->prev;
-		if (first->data > second->data && first->data > third->data)
-			ra(stack_a);
-		if (first->data > second->data && first->data < third->data)
-			sa(stack_a);
-		else if (first->data < second->data && first->data > third->data)
-			rra(stack_a);
-		else if (first->data < second->data && first->data < third->data
-			&& second->data > third->data)
-			sa(stack_a);
-		else if (first->data > second->data && first->data < third->data
-			&& second->data < third->data)
-			ra(stack_a);
-	}
-}	
+	if (first->data < second->data && second->data < third->data)
+		return ;
+	else if (first->data > second->data && third->data < first->data)
+		ra(stack_a);
+	else if (first->data > second->data && first->data < third->data)
+		sa(stack_a);
+	else if ((first->data < second->data && first->data > third->data)
+		|| (first->data < third->data && third->data < second->data))
+		rra(stack_a);
+	sort_three(stack_a);
+}

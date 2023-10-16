@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:57:04 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/12 18:28:48 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:02:37 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	sb(t_stack *stack_b)
 void	ss(t_stack *stack_a, t_stack *stack_b)
 {
 	sa(stack_a);
-    sb(stack_b);
-    ft_putstr_fd("ss\n", STDOUT_FILENO);
+	sb(stack_b);
+	ft_putstr_fd("ss\n", STDOUT_FILENO);
 }
-

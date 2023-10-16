@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:03:33 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/12 18:28:35 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:38:50 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,3 @@ void	rr(t_stack *stack_a, t_stack *stack_b)
 	rotate(stack_b);
 	ft_putstr_fd("rr\n", STDOUT_FILENO);
 }
-

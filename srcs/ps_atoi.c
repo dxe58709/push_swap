@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 11:11:23 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/13 19:22:05 by nsakanou         ###   ########.fr       */
+/*   Created: 2023/10/16 15:01:44 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/10/16 19:45:42 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h" 
+#include "push_swap.h"
 
 static int	ft_positiv(const char *str, int *count)
 {
@@ -34,24 +34,20 @@ int	ps_atoi(const char *str)
 	long	nb;
 	int		count;
 
-  i = 0;
-  nb = 0;
-	while (isspace(str[i]))
+	i = 0;
+	nb = 0;
+	count = 1;
+	if (ft_positiv(str + i, &count) == 1)
 		i++;
-  i += ft_positiv(str + i, &count);
 	while (ft_isdigit(str[i]))
 	{
-		if (count == 1 && ((nb > LONG_MAX / 10)
-				|| ((nb == LONG_MAX / 10) && (str[i] - '0') > LONG_MAX % 10)))
-			return ((int)LONG_MAX);
-		else if (count == -1 && ((-nb < LONG_MIN / 10)
-				|| ((-nb == LONG_MIN / 10) && -(str[i] - '0') < LONG_MIN % 10)))
-			return ((int)LONG_MIN);
 		nb = nb * 10 + (str[i] - '0');
+		if ((count == 1 && INT_MAX < nb) || \
+			(count == -1 && INT_MIN > -nb))
+			ft_error();
 		i++;
 	}
-  if (!ft_isdigit(str[i]) && !isspace(str[i]) && str[i] != '\0')
-    return 0;
+	if (!(ft_isdigit(str[i]) || isspace(str[i])) && str[i] != '\0')
+		ft_error();
 	return (nb * count);
 }
-

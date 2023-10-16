@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:39:25 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/13 17:57:23 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/16 23:10:22 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,30 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	int		*temp3;
+	int		flag;
 
-	ft_check_args(argc, argv);
-	temp3 = coordinate_compression(argc, argv);
-printf("[argv]%s\n", argv[1]);
- printf("[argv]%s\n", argv[2]);
- printf("[argv]%s\n", argv[3]);
+	flag = 0;
+	if (argc == 2)
+	{
+		argv = ps_split(argv[1], ' ');
+		flag = 1;
+		argc = 0;
+		while (argv[argc] != NULL)
+			argc++;
+		argc++;
+	}
+	temp3 = coordinate_compression(argc, argv, &flag);
 	stack_a = create_stack();
 	stack_a->current = argc - 1;
 	stack_a->max = argc - 1;
 	while (--argc)
-		create_node(stack_a, temp3[argc - 1]);//後ろから入れてく
+		create_node(stack_a, temp3[argc - 1]);
 	free(temp3);
 	sort_any(stack_a);
-	while (stack_a->head)
-	{
-		ft_printf("node %d\n", stack_a->head->data);
-		stack_a->head = stack_a->head->prev;
-	}
 }
+
+	// while (stack_a->head)
+	// {
+	// 	ft_printf("node %d\n", stack_a->head->data);
+	// 	stack_a->head = stack_a->head->prev;
+	// }

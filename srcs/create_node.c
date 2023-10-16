@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:58:51 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/13 18:29:43 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/16 14:18:51 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	create_node(t_stack *stack, int data)
 		memory_error();
 	new_node->data = data;
 	new_node->prev = NULL;
-	new_node->next = NULL;
+	new_node->next = stack->head;
 	if (!stack->head)
 	{
 		stack->head = new_node;

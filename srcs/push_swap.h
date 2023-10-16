@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 18:01:11 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/13 18:42:48 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/16 22:00:39 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int		destroy_node(t_stack *stack);
 t_node	*partition(t_node *head, t_node **pivot);
 t_node	*quick_sort(t_node *head);
 
-int		*coordinate_compression(int argc, char **argv);
+int		*coordinate_compression(int argc, char **argv, int *flag);
 
 void	*ps_calloc(size_t count, size_t size);
 
@@ -74,10 +74,9 @@ int		search_two(t_stack *stack, int *data);
 void	sort_five(t_stack *stack_a);
 void	sort_any(t_stack *stack_a);
 
-void	ft_check_args(int argc, char **argv);
-
 void	ft_error(void);
 void	memory_error(void);
 
 char	**ps_split(char const *s, char c);
+int		ps_atoi(const char *str);
 #endif

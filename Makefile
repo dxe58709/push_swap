@@ -6,7 +6,7 @@
 #    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 18:10:44 by nsakanou          #+#    #+#              #
-#    Updated: 2023/10/13 15:09:26 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/10/16 19:30:14 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ PRINTFDIR	=	./printf
 PRINTF		=	$(PRINTFDIR)/libftprintf.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I $(LIBDIR) -I $(PRINTFDIR)
+CFLAGS = -Wall -Wextra -Werror -I $(LIBDIR) -I $(PRINTFDIR) -g -fsanitize=address
 RM = rm -f
 
 SRCS =	srcs/main.c \
@@ -30,13 +30,13 @@ SRCS =	srcs/main.c \
 	srcs/sort_any.c \
 	srcs/sort_five.c \
 	srcs/sort_three.c \
-	srcs/check_args.c \
 	srcs/command/push.c \
 	srcs/command/reverse_rotate.c \
 	srcs/command/rotate.c \
 	srcs/command/swap.c \
 	srcs/coordinate_compression.c \
 	srcs/create_node.c \
+	srcs/ps_atoi.c \
 	srcs/ft_error.c
 
 OBJS = $(SRCS:%.c=%.o)
