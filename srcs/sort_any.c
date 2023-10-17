@@ -112,6 +112,7 @@ void	rb_or_rrb(t_stack *stack, int data)
 	}
 }
 
+
 void	data_three(t_stack *stack_a)
 {
 	if (stack_a->current <= 3)
@@ -175,36 +176,27 @@ void	sort_any(t_stack *stack_a)
 	int		u[2];// u_30 u_10
 	t_stack	*stack_b;
 
-	//data_three(stack_a);
+	data_three(stack_a);
 	stack_b = create_stack();
 	stack_b->current = 0;
 	while (stack_a->current > 3)
 	{
 		u[0] = (stack_a->current * 0.3) + stack_a->max - stack_a->current;
 		u[1] = (stack_a->current * 0.1) + stack_a->max - stack_a->current;
+    if (stack_a->current == 6)
+      u[0] = 2 + stack_a->max - stack_a->current; 
 		if (stack_a->current == 4)
-		{
-			while (stack_a->head->data != stack_a->max - 4)
-			{
-				ra(stack_a);
-			}
-			pb(stack_a, stack_b);
-			break ;
-		}
+		  u[0] = stack_a->max - stack_a->current;
 		while ((stack_a->max - stack_a->current) <= u[0])//30までできてるか
 		{
 			if (stack_a->head->data <= u[0])
 			{
 				pb(stack_a, stack_b);
-				if (stack_a->head->data <= u[1])
-				{
+				if (stack_b->head->data <= u[1])
 					rb(stack_b);
-				}
 			}
 			else
-			{
 				ra(stack_a);
-			}
 		}
 	}
 	sort_three(stack_a);

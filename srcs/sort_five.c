@@ -11,28 +11,28 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
+
 void	sort_five(t_stack *stack_a)
 {
 	t_stack	*stack_b;
 
 	stack_b = create_stack();
-	while (!(stack_a->head->data == 3 && stack_a->head->data == 4))
+	while (!(stack_a->head->data == 3 || stack_a->head->data == 4))
 		ra(stack_a);
 	pb(stack_a, stack_b);
-	while (!(stack_a->head->data == 3 && stack_a->head->data == 4))
+	while (!(stack_a->head->data == 3 || stack_a->head->data == 4))
 		ra(stack_a);
 	pb(stack_a, stack_b);
 	sort_three(stack_a);
-	if (stack_b->head && stack_b->head->data > stack_b->head->prev->data)
+	if (stack_b->head > stack_b->head->prev)
 		rb(stack_b);
 	while (stack_b->head)
 		pa(stack_a, stack_b);
 	ra(stack_a);
 	ra(stack_a);
 }
-*/
 
+/*
 int	search_two(t_stack *stack, int *data)
 {
 	t_node	*tmp;
@@ -91,3 +91,4 @@ void	sort_five(t_stack *stack_a)
 	// 	stack_a->head = stack_a->head->prev;
 	// }
 }
+*/

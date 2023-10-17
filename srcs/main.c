@@ -35,7 +35,12 @@ int	main(int argc, char **argv)
 	while (--argc)
 		create_node(stack_a, temp3[argc - 1]);
 	free(temp3);
-	sort_any(stack_a);
+  if (argc == 4)
+    sort_three(stack_a);
+  else if (argc == 6)
+    sort_five(stack_a);
+  else
+	  sort_any(stack_a);
 }
 
 	// while (stack_a->head)
