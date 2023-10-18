@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:39:25 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/16 23:10:22 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/18 14:52:27 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@ int	main(int argc, char **argv)
 	while (--argc)
 		create_node(stack_a, temp3[argc - 1]);
 	free(temp3);
-  if (argc == 4)
-    sort_three(stack_a);
-  else if (argc == 6)
-    sort_five(stack_a);
-  else
-	  sort_any(stack_a);
+	sort_any(stack_a);
 }
-
+	// if (argc == 4)
+	// 	sort_three(stack_a);
+	// else if (argc == 6)
+	// 	sort_five(stack_a);
+	// else
+	// 	sort_any(stack_a);
 	// while (stack_a->head)
 	// {
 	// 	ft_printf("node %d\n", stack_a->head->data);

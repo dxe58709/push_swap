@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:58:51 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/16 14:18:51 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:00:32 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ t_stack	*create_stack(void)
 	return (a);
 }
 
-// 新しいノードを作成する関数
 void	create_node(t_stack *stack, int data)
 {
 	t_node	*new_node;

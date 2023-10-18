@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:19:08 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/16 23:12:33 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/18 14:43:54 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@
 //                 |
 // ________
 
-
 // // A 
 // 98 99 100
 
@@ -112,7 +111,6 @@ void	rb_or_rrb(t_stack *stack, int data)
 	}
 }
 
-
 void	data_three(t_stack *stack_a)
 {
 	if (stack_a->current <= 3)
@@ -128,52 +126,25 @@ void	data_three(t_stack *stack_a)
 	}
 }
 
-/*
-void	sort_any(t_stack *stack_a)
+void	move_to_stack_b(t_stack *stack_a, t_stack *stack_b, int u_30, int u_10)
 {
-	int		u[2];// u_30 u_10
-	t_stack	*stack_b;
-
-	data_three(stack_a);
-	stack_b = create_stack();
-	stack_b->current = 0;
-	while (stack_a->current > 3)
+	while ((stack_a->max - stack_a->current) <= u_30)
 	{
-		u[0] = (stack_a->current * 0.3) + stack_a->max - stack_a->current;
-	//	u[0] = (stack_a->current / 3) + stack_a->max - stack_a->current (== stack_bに行った数 );
-
-		u[1] = (stack_a->current * 0.1) + stack_a->max - stack_a->current;
-		if (stack_a->current == 4)
+		if (stack_a->head->data <= u_30)
 		{
-			while (stack_a->head->data != stack_a->max - 4)
-				ra(stack_a);
 			pb(stack_a, stack_b);
-			break ;
+			if (stack_b->head->data <= u_10)
+				rb(stack_b);
 		}
-		while ((stack_a->max - stack_a->current) < u[0])//30までできてるか
-		{
-			if (stack_a->head->data <= u[0])
-			{
-				pb(stack_a, stack_b);
-				// if (stack_b->head->data <= u[1])
-				// 	rb(stack_b);
-			}
-			else
-				ra(stack_a);
-		}
-	}
-	sort_three(stack_a);
-	while (stack_a->current < stack_a->max)
-	{
-		rb_or_rrb(stack_b, stack_b->current - 1);
-		pa(stack_a, stack_b);
+		else
+			ra(stack_a);
 	}
 }
-*/
 
 void	sort_any(t_stack *stack_a)
 {
-	int		u[2];// u_30 u_10
+	int		u_30;
+	int		u_10;
 	t_stack	*stack_b;
 
 	data_three(stack_a);
@@ -181,23 +152,13 @@ void	sort_any(t_stack *stack_a)
 	stack_b->current = 0;
 	while (stack_a->current > 3)
 	{
-		u[0] = (stack_a->current * 0.3) + stack_a->max - stack_a->current;
-		u[1] = (stack_a->current * 0.1) + stack_a->max - stack_a->current;
-    if (stack_a->current == 6)
-      u[0] = 2 + stack_a->max - stack_a->current; 
+		u_30 = (stack_a->current * 0.3) + stack_a->max - stack_a->current;
+		u_10 = (stack_a->current * 0.1) + stack_a->max - stack_a->current;
+		if (stack_a->current == 6)
+			u_30 = 2 + stack_a->max - stack_a->current;
 		if (stack_a->current == 4)
-		  u[0] = stack_a->max - stack_a->current;
-		while ((stack_a->max - stack_a->current) <= u[0])//30までできてるか
-		{
-			if (stack_a->head->data <= u[0])
-			{
-				pb(stack_a, stack_b);
-				if (stack_b->head->data <= u[1])
-					rb(stack_b);
-			}
-			else
-				ra(stack_a);
-		}
+			u_30 = stack_a->max - stack_a->current;
+		move_to_stack_b(stack_a, stack_b, u_30, u_10);
 	}
 	sort_three(stack_a);
 	while (stack_a->current < stack_a->max)
