@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:26:16 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/16 23:08:29 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:32:07 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ void	sort_five(t_stack *stack_a)
 		pa(stack_a, stack_b);
 	ra(stack_a);
 	ra(stack_a);
+	while (stack_a->head)
+	{
+		ft_printf("node %d\n", stack_a->head->data);
+		stack_a->head = stack_a->head->prev;
+	}
 }
 
 /*

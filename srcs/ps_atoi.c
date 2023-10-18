@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:01:44 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/16 19:45:42 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:24:20 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ps_atoi(const char *str)
 			ft_error();
 		i++;
 	}
-	if (!(ft_isdigit(str[i]) || isspace(str[i])) && str[i] != '\0')
+	if (!ft_isdigit(str[i]) && str[i] != '\0')
 		ft_error();
 	return (nb * count);
 }
