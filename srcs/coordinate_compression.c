@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 16:38:03 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/16 16:46:52 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/19 19:36:10 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ static void	add_argv(int *temp1, int argc, char **argv, int *flag)
 	}
 	while (i < argc - 1)
 	{
+		if (*argv[i + 1] == '\0')
+			ft_error();
 		temp1[i] = ps_atoi((argv[i + 1]));
 		i++;
 	}
