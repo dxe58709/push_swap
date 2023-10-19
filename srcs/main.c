@@ -6,24 +6,38 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:39:25 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/19 20:41:40 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/19 21:05:04 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool is_sorted(int *arr, int size)
+void	initialize_stack(int argc, char **argv, int *flag)
+{
+	*flag = 0;
+	if (argc == 2)
+	{
+		argv = ps_split(argv[1], ' ');
+		*flag = 1;
+		argc = 0;
+		while (argv[argc] != NULL)
+			argc++;
+		argc++;
+	}
+}
+
+bool	is_sorted(int *arr, int size)
 {
 	int	i;
 
 	i = 0;
 	while (i < size - 1)
 	{
-        if (arr[i] > arr[i + 1])
-            return (false);
+		if (arr[i] > arr[i + 1])
+			return (false);
 		i++;
-    }
-    return (true);
+	}
+	return (true);
 }
 
 int	main(int argc, char **argv)
@@ -34,7 +48,7 @@ int	main(int argc, char **argv)
 
 	flag = 0;
 	temp3 = NULL;
-	if (argc == 2)
+	if (argc == 2)// ./push_swap "       0"がダメ
 	{
 		argv = ps_split(argv[1], ' ');
 		flag = 1;
@@ -43,6 +57,7 @@ int	main(int argc, char **argv)
 			argc++;
 		argc++;
 	}
+	//initialize_stack(argc, argv, &flag);      //./push_swap 1がダメ
 	temp3 = coordinate_compression(argc, argv, &flag);
 	if (is_sorted(temp3, argc - 1))
 		exit(0);
