@@ -12,20 +12,6 @@
 
 #include "push_swap.h"
 
-void	initialize_stack(int argc, char **argv, int *flag)
-{
-	*flag = 0;
-	if (argc == 2)
-	{
-		argv = ps_split(argv[1], ' ');
-		*flag = 1;
-		argc = 0;
-		while (argv[argc] != NULL)
-			argc++;
-		argc++;
-	}
-}
-
 bool	is_sorted(int *arr, int size)
 {
 	int	i;
@@ -48,16 +34,15 @@ int	main(int argc, char **argv)
 
 	flag = 0;
 	temp3 = NULL;
-	if (argc == 2)// ./push_swap "       0"がダメ
-	{
-		argv = ps_split(argv[1], ' ');
-		flag = 1;
-		argc = 0;
-		while (argv[argc] != NULL)
-			argc++;
-		argc++;
-	}
-	//initialize_stack(argc, argv, &flag);      //./push_swap 1がダメ
+//	if (argc == 2)
+//	{
+//		argv = ps_split(argv[1], ' ');
+//		flag = 1;
+//		argc = 0;
+//		while (argv[argc] != NULL)
+//			argc++;
+//		argc++;
+//	}
 	temp3 = coordinate_compression(argc, argv, &flag);
 	if (is_sorted(temp3, argc - 1))
 		exit(0);
