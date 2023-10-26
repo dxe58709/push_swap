@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 15:01:44 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/25 15:12:24 by nsakanou         ###   ########.fr       */
+/*   Created: 2023/05/18 11:53:50 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/10/16 15:06:07 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 static int	ft_positiv(const char *str, int *count)
 {
@@ -28,7 +28,7 @@ static int	ft_positiv(const char *str, int *count)
 	return (i);
 }
 
-int	ps_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int		i;
 	long	nb;
@@ -37,17 +37,20 @@ int	ps_atoi(const char *str)
 	i = 0;
 	nb = 0;
 	count = 1;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
 	if (ft_positiv(str + i, &count) == 1)
 		i++;
 	while (ft_isdigit(str[i]))
 	{
+		if (count == 1 && ((nb > LONG_MAX / 10)
+				|| ((nb == LONG_MAX / 10) && (str[i] - '0') > LONG_MAX % 10)))
+			return ((int)LONG_MAX);
+		else if (count == -1 && ((-nb < LONG_MIN / 10)
+				|| ((-nb == LONG_MIN / 10) && -(str[i] - '0') < LONG_MIN % 10)))
+			return ((int)LONG_MIN);
 		nb = nb * 10 + (str[i] - '0');
-		if ((count == 1 && INT_MAX < nb) || \
-			(count == -1 && INT_MIN > -nb))
-			ft_error();
 		i++;
 	}
-	if (!ft_isdigit(str[i]) && str[i] != '\0')
-		ft_error();
 	return (nb * count);
 }

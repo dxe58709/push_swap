@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:39:25 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/19 21:05:04 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/26 14:03:51 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,16 @@ bool	is_sorted(int *arr, int size)
 	return (true);
 }
 
+int	count_arguments(char **args)
+{
+	int	count;
+
+	count = 0;
+	while (args[count] != NULL)
+		count++;
+	return (count);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -34,15 +44,12 @@ int	main(int argc, char **argv)
 
 	flag = 0;
 	temp3 = NULL;
-//	if (argc == 2)
-//	{
-//		argv = ps_split(argv[1], ' ');
-//		flag = 1;
-//		argc = 0;
-//		while (argv[argc] != NULL)
-//			argc++;
-//		argc++;
-//	}
+	if (argc == 2)
+	{
+		argv = ps_split(argv[1], ' ');
+		flag = 1;
+		argc = count_arguments(argv) + 1;
+	}
 	temp3 = coordinate_compression(argc, argv, &flag);
 	if (is_sorted(temp3, argc - 1))
 		exit(0);

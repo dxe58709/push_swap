@@ -6,18 +6,18 @@
 #    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 18:10:44 by nsakanou          #+#    #+#              #
-#    Updated: 2023/10/19 20:13:12 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/10/26 14:35:09 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 # Libft+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
-LIBDIR = ./srcs/libft
+LIBDIR = ./srcs/ft_libft
 LIBFT = $(LIBDIR)/libft.a
 
 # Printf+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
-PRINTFDIR	=	./printf
+PRINTFDIR	=	./ft_printf
 PRINTF		=	$(PRINTFDIR)/libftprintf.a
 
 CC = cc
